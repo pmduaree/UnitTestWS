@@ -16,6 +16,13 @@ public class MusicBox {
         _currentPlaylist = 1;
     }
 
+    public MusicBox(List<Playlist> playlists) {
+        _playlists = playlists;
+        _playing = false;
+        _currentSongPlaying = 1;
+        _currentPlaylist = 1;
+    }
+
     public void addPlaylist(Playlist playlist) {
         _playlists.add(playlist);
     }
