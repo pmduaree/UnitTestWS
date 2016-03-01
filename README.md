@@ -10,6 +10,8 @@ This workshops is about unit testing. It is focused to students and people who d
 
 This WS is using: Java, maven, junit and easyMock.
 
+Link to presentation: [slides] (http://slides.com/pedroduarte/unit-testing-and-test-driv/live)
+
 ## Objectives
 
 * Know what is Test Driven Development philosophy
