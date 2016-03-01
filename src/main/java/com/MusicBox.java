@@ -28,8 +28,23 @@ public class MusicBox {
         return _playing;
     }
 
+    public void startSong(int index) {
+        if (isAbleToChange(index, getCurrentPlaylist().getNumberOfSongs())) {
+            _currentSongPlaying = index;
+            play();
+        }
+    }
+
     public void nextSong() {
-        _currentSongPlaying++;
+        int index = _currentSongPlaying + 1;
+        if (isAbleToChange(index, getCurrentPlaylist().getNumberOfSongs())) {
+            _currentSongPlaying = index;
+            play();
+        }
+    }
+
+    private boolean isAbleToChange(int index, int upperBundary) {
+        return index > 0 && index <= upperBundary;
     }
 
     public int getCurrentSongPlayingIndex() {
@@ -45,10 +60,23 @@ public class MusicBox {
     }
 
     public void changePlaylist(int index) {
-        _currentPlaylist = index;
+        if (isAbleToChange(index, _playlists.size() + 1)) {
+            _currentPlaylist = index;
+        }
     }
 
     public Playlist getCurrentPlaylist() {
-        return _playlists.get(_currentPlaylist - 1);
+        if (isAbleToChange(_currentPlaylist, _playlists.size())) {
+            return _playlists.get(_currentPlaylist - 1);
+        } else {
+            return null;
+        }
+    }
+
+    public Song getCurrentSongPlaying() {
+        if (!isPlaying()) {
+            return null;
+        }
+        return getCurrentPlaylist().getSong(_currentSongPlaying - 1);
     }
 }
