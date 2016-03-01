@@ -20,28 +20,12 @@ public class MusicBox {
         _playlists.add(playlist);
     }
 
-    public void setPlaylists(List<Playlist> playlists){
-        _playlists = playlists;
-    }
-
-    public List<Playlist> getPlaylist() {
-        return _playlists;
-    }
-
     public int getNumberOfPlaylist() {
         return _playlists.size();
     }
 
     public boolean isPlaying() {
         return _playing;
-    }
-
-    public void setPlaying(boolean playing) {
-        _playing = playing;
-    }
-
-    public void startSong(int index) {
-        _currentSongPlaying = index;
     }
 
     public void nextSong() {
@@ -65,6 +49,6 @@ public class MusicBox {
     }
 
     public Playlist getCurrentPlaylist() {
-        return _playlists.get(_currentPlaylist-1);
+        return _playlists.get(_currentPlaylist - 1);
     }
 }

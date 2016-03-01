@@ -37,6 +37,7 @@ public class MusicBoxTest {
     public void testChangeSongs() {
         _musicBox.nextSong();
         assertEquals(2, _musicBox.getCurrentSongPlayingIndex());
+        assertFalse(_musicBox.isPlaying());
     }
 
     @Test
