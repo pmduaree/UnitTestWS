@@ -6,7 +6,7 @@
 
 ## Introduccion
 
-Este taller es acerca de pruebas unitarias. Está enfocado para estudiantes y personas que no conoces acerca de test driven development y pruebas unitarias.
+Este taller es acerca de pruebas unitarias. Está enfocado para estudiantes y personas que no conocen acerca de test driven development y pruebas unitarias.
 
 En este workshop usaremos git, Java, maven, Junit y easyMock. En este taller se supone que ya tienes el ambiente de Java, git y maven corriendo. 
 
@@ -45,9 +45,9 @@ Crearemos 3 clases: Song (canción), Playlist (lista de reproducción) y MusicBo
 ## Nivel 0:
 
 Lee que es una prueba unitaria y que es Test Driven Development:
-
-*[Prueba Unitaria](https://es.wikipedia.org/wiki/Prueba_unitaria)
-*[Test Driven Development](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_pruebas) 
+ 
+* [Prueba Unitaria](https://es.wikipedia.org/wiki/Prueba_unitaria)
+* [Test Driven Development](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_pruebas) 
 
 Ya que entiendas estos conceptos nos movemos a la consola (la que gustes). Clona este repositorio en el directorio que gustes:
 
@@ -478,7 +478,7 @@ A partir de este punto, ya tienes lo básico para sobre unit testing. Si quieres
 
 ## Nivel 4:
 
-Vamos a agregar cosas nuevas a la caja de muúsica. No se explicaraá nada de pruebas unitarias, pero si sobre refactorizar un poco lo que ya tenemos.
+Vamos a agregar cosas nuevas a la caja de música. No se explicará nada de pruebas unitarias, pero si sobre refactorizar un poco lo que ya tenemos.
 
 Agregaremos el siguiente comportamiento a la caja de música:
 
@@ -497,7 +497,7 @@ assertEquals(1, _musicBox.getCurrentSongPlayingIndex());
 
 Puedes agregar las pruebas que quieras que cubran todos los casos. Pero recuerda: Si escribes pruebas de más que ya están cubriendo estos casos, al momento de correrlas será tardado!
 
-Ahora vamos a agregar validaciones para esto: (ya saben, inténtenlo primero y luego pueden copiar el código si no lo lograron). Por ejemplo, para este caso sería:
+Ahora vamos a agregar validaciones para esto: (ya saben, primero inténtenlo y luego pueden copiar el código si no lo lograron). Por ejemplo, para este caso sería:
 
 ``` java
 private boolean isAbleToChange(int index, int upperBundary) {
@@ -511,7 +511,8 @@ public void changePlaylist(int index) {
 }
 ```
 
-Ya con este nivel, ya tienen una mejor idea de como funciona el agregar nuevos casos en las pruebas que ya tenemos. No olviden de correr las pruebas. Si llega a fallar una, las tenemos que arreglar!
+Ya con este nivel, ya tienen una mejor idea de como funciona el agregar nuevos casos en las pruebas que ya tenemos. No olviden de correr las pruebas. 
+Si llega a fallar una, las tenemos que arreglar!
 
 ## Nivel 5:
 
@@ -555,7 +556,7 @@ _musicBox = new MusicBox(playlists);
 
 Con esto tendremos el comportamiento simulado de una lista de reproducción cada vez que corramos la prueba. La función de ```createMock``` "instanciará" un objeto de tipo Playlist. Con ```expect``` le daremos el comportamiento que deseamos, es decir, si llamaramos el método de ```getNumberOfSongs``` de esta instancia simulada, siempre nos regresaría 2, sin importar cuantas canciones le metamos. 
 
-Ahora escribamos la prueba que pruebe esto:
+Ahora escribamos la prueba de esto:
 
 ``` java
 @Test
@@ -566,16 +567,16 @@ public void testBasicStuff() {
 }
 ```
 
-Viste como si pasaron las pruebas? Por que internamente, musicBox está mandando a llamar la función que nostros hemos simulado.
+Viste como si pasaron las pruebas? Ésto es gracias a que internamente musicBox está mandando a llamar la función que nostros hemos simulado.
 
-El simular estas funciones nos es útil cuando la interacción entre clases es más complicado de lo que es. 
+El simular estas funciones nos es útil cuando la interacción entre clases es complicada. 
 
-## Conclusion
+## Conclusión
 
 Recuerda que las pruebas unitarias solo deben de probar una sola cosa, como lo dice su nombre. Entonces, te preguntarás, lo que hicimos en los niveles 1 al 4 está mal? La respuesta corta es: si. La larga es: si, por que estamos probando la interacción entre clases y, como te habrás dado cuenta, ya es más de 1 cosa. Es aquí donde los mocks nos son útiles.
 
 Y estas son las pruebas unitarias! De que te pueden servir? Esto te llega a ser útil cuando escribes código y sabes que alguien más le va a meter mano. Le pones una especie de candado en el que sabes que lo que tu escribas tendrá el comportamiento que desees.
 
-Hay muchas cosas maás por aprender para ti, solo tienes que buscar en el internet. 
+Hay muchas cosas más por aprender, solo tienes que buscar en el internet. 
 
 > And remember, try to cover your code with test so other devs doesn't screw up your work!
